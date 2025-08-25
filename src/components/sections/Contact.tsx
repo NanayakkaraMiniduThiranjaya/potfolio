@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Reveal from '../Reveal';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,12 +58,14 @@ const Contact = () => {
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+          <Reveal>
+            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+          </Reveal>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
+          <Reveal className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Let's Connect</h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -105,63 +108,65 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
-                  required
-                />
-              </div>
+          <Reveal>
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
+                    required
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
-                  required
-                />
-              </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
+                    required
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
-                  required
-                ></textarea>
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
+                    required
+                  ></textarea>
+                </div>
 
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
