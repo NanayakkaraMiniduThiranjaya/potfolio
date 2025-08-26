@@ -8,10 +8,11 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
+    { label: 'About Me', href: '#about' },
+    { label: 'Technical Skills', href: '#languages' },
     { label: 'Education', href: '#education' },
-    { label: 'Certificates', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
+    { label: 'Professional Experience', href: '#experience' },
+    { label: 'Certifications', href: '#projects' },
     { label: 'Contact', href: '#contact' },
   ];
 

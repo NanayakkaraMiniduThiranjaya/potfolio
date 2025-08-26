@@ -6,7 +6,7 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Reveal>
-            <h2 className="text-3xl font-bold mb-4">Education</h2>
+            <h2 className="text-3xl font-bold mb-4">Education & Qualifications</h2>
           </Reveal>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
