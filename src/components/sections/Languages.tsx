@@ -173,7 +173,7 @@ const Languages = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {activeCategory.items.map((item, index) => (
+          {activeCategory.items.map((item) => (
             <Reveal key={item.name}>
               <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
                 <div className="flex items-center gap-4">

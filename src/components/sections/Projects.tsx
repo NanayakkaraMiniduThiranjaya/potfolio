@@ -9,21 +9,21 @@ const Projects = () => {
       year: '2025',
       description: 'This project involved designing a centralized system for the digitization and management of mining industry processes. Key functionalities include licensing, royalty calculations, real-time compliance tracking, mapping of mining sites, and regulatory branches. The system aims to facilitate transparency and sustainability in the mining sector.',
       technologies: ['Next.js', 'Flask'],
-      image: '/projects/ceylonmine.jpg', // Add your project image here
+      image: '/about.png', // Using existing image as fallback
     },
     {
       title: 'Real-Time Event Ticketing System',
       year: '2024',
       description: 'This project focused on developing a real-time event ticketing system. Users can book tickets, view events, and receive instant updates on ticket availability. The project emphasized handling real-time data, user authentication, and integrating dynamic features for a seamless user experience.',
       technologies: ['React.js', 'Node.js', 'Java'],
-      image: '/projects/ticketing.jpg', // Add your project image here
+      image: '/about.png', // Using existing image as fallback
     },
     {
       title: 'Zero Hunger Website Development',
       year: 'March 2024',
       description: 'This project involved designing a responsive website for Zero Hunger Awareness. It was a collaborative effort with the Web Development team at the University of Westminster. The website features a shop interface, a feedback form, and a content page specifically on "Youth Engagement in Sustainable Food Systems."',
       technologies: ['HTML', 'CSS', 'JavaScript'],
-      image: './public/zero-hunger.png',
+      image: '/zero-hunger.png',
     },
   ];
 

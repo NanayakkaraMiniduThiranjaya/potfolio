@@ -59,9 +59,9 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <Reveal className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Let's Connect</h3>
+              <h3 className="text-xl font-semibold mb-4">Let&apos;s Connect</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
             </div>
 
