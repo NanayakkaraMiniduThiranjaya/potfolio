@@ -32,6 +32,7 @@ const categories: Category[] = [
     items: [
       { name: 'React', slug: 'react' },
       { name: 'Next.js', slug: 'nextdotjs' },
+      { name: 'Nuxt.js', slug: 'nuxtdotjs' },
       { name: 'Tailwind CSS', slug: 'tailwindcss' },
       { name: 'Bootstrap', slug: 'bootstrap' },
       { name: 'Framer Motion', slug: 'framer' },
@@ -46,8 +47,8 @@ const categories: Category[] = [
       { name: 'MongoDB', slug: 'mongodb' },
       { name: 'Firebase', slug: 'firebase' },
       { name: 'Supabase', slug: 'supabase' },
-      { name: 'PostgreSQL', slug: 'postgresql' }
-    ]
+      { name: 'PostgreSQL', slug: 'postgresql' },
+    ],
   },
   {
     key: 'version',
@@ -127,7 +128,7 @@ const categories: Category[] = [
     label: 'Other',
     items: [
       { name: 'Node.js', slug: 'nodedotjs' },
-      { name: 'Express.js', slug: 'express' }
+      { name: 'Express.js', slug: 'express' },
     ],
   },
 ];
@@ -137,24 +138,33 @@ const Languages = () => {
   const activeCategory = categories.find((c) => c.key === activeKey) ?? categories[0];
 
   return (
-    <section id="languages" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+    <section id="languages" className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-indigo-50 to-purple-100 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-16">
           <Reveal>
-            <h2 className="text-3xl font-bold mb-4">Technical Skills & Technologies</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Technical Skills & Technologies
+            </h2>
           </Reveal>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
           {categories.map((cat) => (
             <button
               key={cat.key}
               onClick={() => setActiveKey(cat.key)}
-              className={`px-4 py-2 rounded-full text-sm transition-colors border ${
+              className={`group px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border-2 ${
                 activeKey === cat.key
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-gray-800/10 dark:bg-gray-700/40 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-600'
+                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-transparent shadow-lg scale-105'
+                  : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-800 hover:border-indigo-400 dark:hover:border-indigo-400 hover:scale-105'
               }`}
             >
               {cat.label}
@@ -163,16 +173,22 @@ const Languages = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {activeCategory.items.map((item) => (
+          {activeCategory.items.map((item, index) => (
             <Reveal key={item.name}>
-              <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-xl px-4 py-3 shadow-md border border-gray-200 dark:border-gray-700">
-                {/* Using img for remote icons to avoid Next Image domain config */}
-                <img
-                  src={iconUrl(item.slug)}
-                  alt={`${item.name} icon`}
-                  className="w-6 h-6 object-contain"
-                />
-                <span className="font-medium text-gray-900 dark:text-gray-100">{item.name}</span>
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <img
+                      src={iconUrl(item.slug)}
+                      alt={`${item.name} icon`}
+                      className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300"></div>
+                  </div>
+                  <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    {item.name}
+                  </span>
+                </div>
               </div>
             </Reveal>
           ))}

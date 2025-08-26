@@ -1,45 +1,79 @@
-import Link from 'next/link';
+'use client';
+
+import { useEffect, useState } from 'react';
 import Reveal from '../Reveal';
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+    <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+      {/* Subtle animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Reveal>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
-            Hi, I'm <span className="text-blue-600 dark:text-blue-400">Minidu Thiranjaya</span>
-          </h1>
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Minidu Thiranjaya
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-200 mb-8 leading-relaxed">
+              Software Engineer & Full-Stack Developer
+            </p>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8 rounded-full"></div>
+          </div>
         </Reveal>
+
         <Reveal>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-600 dark:text-gray-300 mb-6">
-            UnderGraduate Software Engineer
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mb-8">
-            I build exceptional digital experiences with a focus on performance,
-            accessibility, and user experience. Passionate about creating innovative
-            solutions to complex problems.
+          <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+            Passionate about creating innovative solutions and building scalable applications. 
+            Transforming ideas into reality through code and creativity.
           </p>
         </Reveal>
+
         <Reveal>
-          <div className="flex gap-4">
-            <Link
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
               href="/Minidu%20ThiranjayaResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              Get Resume
-            </Link>
-            <Link
+              <span className="relative z-10">Download Resume</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            
+            <a
               href="#contact"
-              className="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
+              className="group px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
             >
-              Contact Me
-            </Link>
+              Get In Touch
+            </a>
           </div>
         </Reveal>
+      </div>
+
+      {/* Subtle parallax effect */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl"></div>
       </div>
     </section>
   );

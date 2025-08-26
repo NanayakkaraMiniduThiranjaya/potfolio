@@ -23,7 +23,7 @@ const Projects = () => {
       year: 'March 2024',
       description: 'This project involved designing a responsive website for Zero Hunger Awareness. It was a collaborative effort with the Web Development team at the University of Westminster. The website features a shop interface, a feedback form, and a content page specifically on "Youth Engagement in Sustainable Food Systems."',
       technologies: ['HTML', 'CSS', 'JavaScript'],
-      image: '/projects/zerohunger.jpg', // Add your project image here
+      image: './public/zero-hunger.png',
     },
   ];
 
