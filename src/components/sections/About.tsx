@@ -1,4 +1,5 @@
 import Reveal from '../Reveal';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -13,44 +14,54 @@ const About = () => {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <Reveal className="space-y-6">
-            <p className="text-lg">
-              I'm a passionate Software Engineer with a strong foundation in full-stack development
-              and a keen interest in building scalable applications. With expertise in modern
-              technologies and best practices, I strive to create efficient and user-friendly
-              solutions.
-            </p>
-            <p className="text-lg">
-              My journey in software development began with [Your Background]. Since then,
-              I've worked on various projects ranging from web applications to [Other Types of Projects].
-              I'm particularly interested in [Your Interests/Specializations].
-            </p>
-            <p className="text-lg">
-              When I'm not coding, you can find me [Your Hobbies/Interests]. I believe in
-              continuous learning and staying updated with the latest technologies and industry trends.
-            </p>
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                I&apos;m an organized and efficient person with an enquiring mind and also I&apos;m a good listener. 
+                Eager to leverage my education and learnings to tackle challenges and make a positive impact.
+              </p>
+              
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                A quick learner with excellent communication skills and a collaborative mindset, 
+                seeking an entry-level opportunity to grow and develop within a supportive team.
+              </p>
+              
+              <div className="pt-4">
+                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Key Strengths</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-gray-600 dark:text-gray-400">Problem Solving</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-gray-600 dark:text-gray-400">Team Collaboration</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-gray-600 dark:text-gray-400">Quick Learning</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-gray-600 dark:text-gray-400">Communication</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Reveal>
           
           <Reveal className="space-y-6">
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Quick Facts</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-600 rounded-full mr-3"></span>
-                  [Years] of experience in software development
-                </li>
-                <li className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-600 rounded-full mr-3"></span>
-                  [Number] projects completed
-                </li>
-                <li className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-600 rounded-full mr-3"></span>
-                  [Degree/Education] background
-                </li>
-                <li className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-600 rounded-full mr-3"></span>
-                  Based in [Location]
-                </li>
-              </ul>
+            <div className="relative group bg-white/80 dark:bg-gray-700/60 p-6 rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-600 overflow-hidden">
+              <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex justify-center">
+                <Image
+                  src="/about.png"
+                  alt="About Me"
+                  width={320}
+                  height={320}
+                  className="rounded-xl object-cover shadow-2xl ring-1 ring-gray-200/60 dark:ring-gray-600/60 transition-transform duration-300 ease-out group-hover:scale-105"
+                  priority
+                />
+              </div>
             </div>
           </Reveal>
         </div>
