@@ -53,13 +53,10 @@ const About = () => {
             <div className="relative group bg-white/80 dark:bg-gray-700/60 p-6 rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-600 overflow-hidden">
               <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex justify-center">
-                <Image
+                <img
                   src="/about.png"
                   alt="About Me"
-                  width={320}
-                  height={320}
-                  className="rounded-xl object-cover shadow-2xl ring-1 ring-gray-200/60 dark:ring-gray-600/60 transition-transform duration-300 ease-out group-hover:scale-105"
-                  priority
+                  className="rounded-xl object-cover shadow-2xl ring-1 ring-gray-200/60 dark:ring-gray-600/60 transition-transform duration-300 ease-out group-hover:scale-105 w-80 h-80"
                 />
               </div>
             </div>

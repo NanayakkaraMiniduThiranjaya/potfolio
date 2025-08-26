@@ -25,7 +25,7 @@ const Hero = () => {
         <Reveal>
           <div className="flex gap-4">
             <Link
-              href="/Minidu%20Thiranjaya.pdf"
+              href="/Minidu%20ThiranjayaResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"

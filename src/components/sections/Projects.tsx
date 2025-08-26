@@ -1,36 +1,44 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
 import Reveal from '../Reveal';
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
-
-  const projects = [
+  const certificates = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform built with Next.js, TypeScript, and Stripe integration.',
-      image: '/projects/ecommerce.jpg',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-      link: '#',
-      github: '#',
+      title: 'Building AI Agents and Apps with Azure AI Foundry',
+      issuer: 'Styava',
+      issueDate: 'Issued Mar 2025',
+      skills: ['Azure AI', 'AI Agents', 'AI Applications'],
+      credentialLink: 'https://www.linkedin.com/in/minidu-thiranjaya-988113320/details/certifications/1756226365107/single-media-viewer/?type=DOCUMENT&profileId=ACoAAFEstrgBfAxIuc-92el0nRy56zGQtFtqVNE',
+      type: 'Participation Certificate',
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team features.',
-      image: '/projects/taskmanager.jpg',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      link: '#',
-      github: '#',
+      title: 'Java Object-Oriented Programming',
+      issuer: 'LinkedIn',
+      issueDate: 'Issued Nov 2024',
+      skills: ['Java', 'Object-Oriented Programming (OOP)'],
+      credentialLink: 'https://www.linkedin.com/learning/certificates/dc760c335891a25d908506bb99f96799fbbaea249728fcdbf256b6695d933342?accountId=76664938&u=76664938&success=true&authUUID=xCXJJjYyTyyqtAkMDbLJag%3D%3D',
     },
     {
-      title: 'Portfolio Website',
-      description: 'A modern portfolio website built with Next.js and Tailwind CSS.',
-      image: '/projects/portfolio.jpg',
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-      link: '#',
-      github: '#',
+      title: 'Node.js Essential Training',
+      issuer: 'LinkedIn',
+      issueDate: 'Issued Nov 2024',
+      skills: ['Node.js'],
+      credentialLink: 'https://www.linkedin.com/learning/certificates/ee25ec467fd2e10bfdcbd84bf7a6633b92fb643504d29a1611963e405566717b?u=76664938',
+    },
+    {
+      title: 'React.js Essential Training',
+      issuer: 'LinkedIn',
+      issueDate: 'Issued Nov 2024',
+      skills: ['React.js'],
+      credentialLink: 'linkedin.com/learning/certificates/effb272b42e6359ff9f80cf506d7b213fcf19d88e5c6ca72e0dcb71ceea017e5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BjKoscm2%2FT2K2KV3HtAvhUA%3D%3D',
+    },
+    {
+      title: 'Spring Boot 2.0 Essential Training',
+      issuer: 'LinkedIn',
+      issueDate: 'Issued Nov 2024',
+      skills: ['Spring Boot'],
+      credentialLink: 'https://www.linkedin.com/learning/certificates/050136cc7ee75d99e0e55f40749a5678de9bac6e0e586528ab83034fed69b585?u=76664938',
     },
   ];
 
@@ -39,61 +47,67 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Reveal>
-            <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+            <h2 className="text-3xl font-bold mb-4">Licenses & Certifications</h2>
           </Reveal>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Reveal key={index} style={{ transitionDelay: `${index * 120}ms` } as any}>
-              <div
-                className="group relative bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
-                onMouseEnter={() => setActiveProject(index)}
-                onMouseLeave={() => setActiveProject(null)}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
-                  <div className="relative h-full">
-                    <div className="absolute inset-0 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
-                    {/* Replace with actual project images */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                      Project Image
-                    </div>
+        <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+          {certificates.map((certificate, index) => (
+            <Reveal key={index}>
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg border border-gray-200 dark:border-gray-600">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    {certificate.issuer === 'Styava' ? (
+                      <img
+                        src="/Styava.jpg"
+                        alt="Styava Logo"
+                        className="w-12 h-12 rounded-lg object-cover"
+                      />
+                    ) : (
+                      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">in</span>
+                      </div>
+                    )}
                   </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-4">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                      {certificate.title}
+                    </h3>
+                    {certificate.type && (
+                      <div className="inline-block px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 text-xs font-medium rounded-full mb-2">
+                        {certificate.type}
+                      </div>
+                    )}
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">
+                      {certificate.issuer}
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
+                      {certificate.issueDate}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {certificate.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    
                     <a
-                      href={project.link}
+                      href={certificate.credentialLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                      className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium transition-colors"
                     >
-                      Live Demo →
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      GitHub →
+                      Show credential
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   </div>
                 </div>
